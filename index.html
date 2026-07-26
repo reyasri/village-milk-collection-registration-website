@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Village Milk Collection Register</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Village Milk Collection Register</h1>
+
+        <!-- Add Record Form -->
+        <div class="form-container">
+            <h2>Add New Milk Record</h2>
+
+            <input type="text" id="memberId" placeholder="Member ID">
+            <input type="text" id="memberName" placeholder="Member Name">
+            <input type="date" id="date">
+
+            <select id="session">
+                <option value="Morning">Morning</option>
+                <option value="Evening">Evening</option>
+            </select>
+
+            <input type="number" id="quantity" placeholder="Quantity (Litres)">
+            <input type="number" id="fat" placeholder="Fat %">
+            <input type="number" id="rate" placeholder="Rate">
+
+            <button onclick="addRecord()">Add Record</button>
+        </div>
+
+        <hr>
+
+        <!-- Search and Filter -->
+
+        <div class="controls">
+
+            <input type="text" id="search" placeholder="Search Member Name">
+
+            <select id="filter">
+
+                <option value="All">All Sessions</option>
+                <option value="Morning">Morning</option>
+                <option value="Evening">Evening</option>
+
+            </select>
+
+        </div>
+
+        <h3 id="recordCount">Showing 0 Records</h3>
+
+        <table>
+
+            <thead>
+
+                <tr>
+
+                    <th>ID</th>
+                    <th>Member ID</th>
+                    <th>Name</th>
+                    <th>Date</th>
+                    <th>Session</th>
+                    <th>Qty</th>
+                    <th>Fat%</th>
+                    <th>Rate</th>
+                    <th>Amount</th>
+                    <th>Details</th>
+
+                </tr>
+
+            </thead>
+
+            <tbody id="tableBody">
+
+            </tbody>
+
+        </table>
+
+    </div>
+    <script src="milkData.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
