@@ -1,15 +1,16 @@
 // Copy data from milkData.js
-
-let records = [...milkRecords];
-console.log(milkRecords);
+let milkRecords = JSON.parse(localStorage.getItem("milkRecords")) || defaultMilkRecords;
+displayRecords(milkRecords);
 // Run when page loads
 window.onload = function () {
 
-    displayRecords(records);
+    displayRecords(milkRecords);
 
-    document.getElementById("search").addEventListener("keyup", filterRecords);
+    document.getElementById("search")
+        .addEventListener("keyup", filterRecords);
 
-    document.getElementById("filter").addEventListener("change", filterRecords);
+    document.getElementById("filter")
+        .addEventListener("change", filterRecords);
 
 };
 
@@ -154,6 +155,10 @@ function addRecord() {
     };
 
     records.push(newRecord);
+    localStorage.setItem(
+        "milkRecords",
+        JSON.stringify(milkRecords)
+    );
 
     displayRecords(records);
 
